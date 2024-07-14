@@ -1,0 +1,290 @@
+<html>
+<head>
+<script src="prism.js"></script>
+<link rel="stylesheet" href="prism.css" />
+</head>
+<body>
+<h1>Chapter:</h1>
+<p></p>
+<h2>Introduction</h2>
+<p></p>
+<p>Lists are one of the most commonly used data structures in programming. They provide a flexible and efficient way to manage collections of items. In C#, the <span class="spec">List<T></span> class from the <span class="spec">System.Collections.Generic</span> namespace offers a powerful implementation of a dynamic array. This chapter covers the creation, manipulation, and advanced usage of lists in C#, including interesting examples to demonstrate various features.</p>
+<p></p>
+<h2>Creating</h2>
+<p></p>
+<h3>Basic</h3>
+<p></p>
+<p>You can create a list by specifying the type of elements it will hold:</p>
+<p></p>
+<pre><code class="language-csharp">using System;
+using System.Collections.Generic;
+
+List&lt;int&gt; numbers = new List&lt;int&gt;(); // List of integers
+List&lt;string&gt; names = new List&lt;string&gt;(); // List of strings
+</code></pre>
+<p></p>
+<h3>Initializing</h3>
+<p></p>
+<p>You can initialize a list with a collection of elements:</p>
+<p></p>
+<pre><code class="language-csharp">List&lt;int&gt; numbers = new List&lt;int&gt; { 1, 2, 3, 4, 5 };
+List&lt;string&gt; names = new List&lt;string&gt; { "Alice", "Bob", "Charlie" };
+</code></pre>
+<p></p>
+<h3>Interesting</h3>
+<p></p>
+<pre><code class="language-csharp">public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+
+    public override string ToString() =&gt; $"Name: {Name}, Age: {Age}";
+}
+
+List&lt;Person&gt; people = new List&lt;Person&gt;
+{
+    new Person("Alice", 30),
+    new Person("Bob", 25),
+    new Person("Charlie", 35)
+};
+
+foreach (var person in people)
+{
+    Console.WriteLine(person);
+}
+</code></pre>
+<p></p>
+<h2>Adding</h2>
+<p></p>
+<h3>Adding</h3>
+<p></p>
+<p>You can add elements to a list using the <span class="spec">Add</span> method or <span class="spec">AddRange</span> for multiple elements:</p>
+<p></p>
+<pre><code class="language-csharp">List&lt;int&gt; numbers = new List&lt;int&gt;();
+numbers.Add(1);
+numbers.Add(2);
+numbers.AddRange(new int[] { 3, 4, 5 });
+
+foreach (var number in numbers)
+{
+    Console.WriteLine(number);
+}
+</code></pre>
+<p></p>
+<h3>Removing</h3>
+<p></p>
+<p>You can remove elements using the <span class="spec">Remove</span>, <span class="spec">RemoveAt</span>, and <span class="spec">Clear</span> methods:</p>
+<p></p>
+<pre><code class="language-csharp">List&lt;int&gt; numbers = new List&lt;int&gt; { 1, 2, 3, 4, 5 };
+numbers.Remove(3); // Removes the first occurrence of 3
+numbers.RemoveAt(0); // Removes the element at index 0
+numbers.Clear(); // Removes all elements
+
+Console.WriteLine($"Count after clearing: {numbers.Count}");
+</code></pre>
+<p></p>
+<h3>Interesting</h3>
+<p></p>
+<pre><code class="language-csharp">List&lt;int&gt; numbers = new List&lt;int&gt; { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+numbers.RemoveAll(n =&gt; n % 2 == 0); // Removes all even numbers
+
+foreach (var number in numbers)
+{
+    Console.WriteLine(number);
+}
+</code></pre>
+<p></p>
+<h2>Accessing</h2>
+<p></p>
+<h3>Indexing</h3>
+<p></p>
+<p>You can access elements in a list using the indexer:</p>
+<p></p>
+<pre><code class="language-csharp">List&lt;string&gt; names = new List&lt;string&gt; { "Alice", "Bob", "Charlie" };
+string firstPerson = names[0];
+string secondPerson = names[1];
+
+Console.WriteLine($"First person: {firstPerson}");
+Console.WriteLine($"Second person: {secondPerson}");
+</code></pre>
+<p></p>
+<h3>Iterating</h3>
+<p></p>
+<p>You can iterate over elements using a <span class="spec">foreach</span> loop or a <span class="spec">for</span> loop:</p>
+<p></p>
+<pre><code class="language-csharp">List&lt;string&gt; names = new List&lt;string&gt; { "Alice", "Bob", "Charlie" };
+
+foreach (var name in names)
+{
+    Console.WriteLine(name);
+}
+
+// Using a for loop
+for (int i = 0; i &lt; names.Count; i++)
+{
+    Console.WriteLine(names[i]);
+}
+</code></pre>
+<p></p>
+<h3>Interesting</h3>
+<p></p>
+<pre><code class="language-csharp">List&lt;int&gt; numbers = new List&lt;int&gt; { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+int firstEven = numbers.Find(n =&gt; n % 2 == 0); // Finds the first even number
+List&lt;int&gt; allEvens = numbers.FindAll(n =&gt; n % 2 == 0); // Finds all even numbers
+
+Console.WriteLine($"First even number: {firstEven}");
+Console.WriteLine("All even numbers:");
+foreach (var even in allEvens)
+{
+    Console.WriteLine(even);
+}
+</code></pre>
+<p></p>
+<h2>Modifying</h2>
+<p></p>
+<h3>Updating</h3>
+<p></p>
+<p>You can update elements in a list by accessing them through the indexer:</p>
+<p></p>
+<pre><code class="language-csharp">List&lt;string&gt; names = new List&lt;string&gt; { "Alice", "Bob", "Charlie" };
+names[1] = "Robert"; // Updates "Bob" to "Robert"
+
+foreach (var name in names)
+{
+    Console.WriteLine(name);
+}
+</code></pre>
+<p></p>
+<h3>Sorting</h3>
+<p></p>
+<p>You can sort elements in a list using the <span class="spec">Sort</span> method:</p>
+<p></p>
+<pre><code class="language-csharp">List&lt;int&gt; numbers = new List&lt;int&gt; { 5, 3, 8, 1, 2 };
+numbers.Sort();
+
+Console.WriteLine("Sorted numbers:");
+foreach (var number in numbers)
+{
+    Console.WriteLine(number);
+}
+</code></pre>
+<p></p>
+<h3>Interesting</h3>
+<p></p>
+<pre><code class="language-csharp">public class Person : IComparable&lt;Person&gt;
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+
+    public int CompareTo(Person other)
+    {
+        return Age.CompareTo(other.Age);
+    }
+
+    public override string ToString() =&gt; $"Name: {Name}, Age: {Age}";
+}
+
+List&lt;Person&gt; people = new List&lt;Person&gt;
+{
+    new Person("Alice", 30),
+    new Person("Bob", 25),
+    new Person("Charlie", 35)
+};
+
+people.Sort();
+
+Console.WriteLine("People sorted by age:");
+foreach (var person in people)
+{
+    Console.WriteLine(person);
+}
+</code></pre>
+<p></p>
+<h2>Advanced</h2>
+<p></p>
+<h3>Converting</h3>
+<p></p>
+<p>You can convert a list to an array using the <span class="spec">ToArray</span> method:</p>
+<p></p>
+<pre><code class="language-csharp">List&lt;int&gt; numbers = new List&lt;int&gt; { 1, 2, 3, 4, 5 };
+int[] numbersArray = numbers.ToArray();
+
+Console.WriteLine("Array elements:");
+foreach (var number in numbersArray)
+{
+    Console.WriteLine(number);
+}
+</code></pre>
+<p></p>
+<h3>Using</h3>
+<p></p>
+<p>LINQ (Language-Integrated Query) provides powerful querying capabilities for lists:</p>
+<p></p>
+<pre><code class="language-csharp">using System.Linq;
+
+List&lt;int&gt; numbers = new List&lt;int&gt; { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+var evens = numbers.Where(n =&gt; n % 2 == 0);
+var sum = numbers.Sum();
+
+Console.WriteLine("Even numbers:");
+foreach (var number in evens)
+{
+    Console.WriteLine(number);
+}
+
+Console.WriteLine($"Sum of numbers: {sum}");
+</code></pre>
+<p></p>
+<h3>Interesting</h3>
+<p></p>
+<pre><code class="language-csharp">List&lt;string&gt; names = new List&lt;string&gt; { "Alice", "Bob", "Charlie", "Anna", "Brian" };
+
+var groupedNames = names.GroupBy(name =&gt; name[0]);
+
+Console.WriteLine("Names grouped by first letter:");
+foreach (var group in groupedNames)
+{
+    Console.WriteLine($"Group {group.Key}:");
+    foreach (var name in group)
+    {
+        Console.WriteLine($"  {name}");
+    }
+}
+</code></pre>
+<p></p>
+<h2>Performance</h2>
+<p></p>
+<p>While <span class="spec">List<T></span> is versatile and easy to use, there are some performance considerations to keep in mind:</p>
+<p></p>
+<p>- <strong>Capacity Management</strong>: Internally, <span class="spec">List<T></span> maintains an array that may need to be resized as elements are added. You can use the <span class="spec">Capacity</span> property to minimize reallocations.</p>
+<p>- <strong>Search and Sort Performance</strong>: The performance of searching and sorting operations can vary based on the size of the list and the complexity of the comparison logic.</p>
+<p></p>
+<h3>Example:</h3>
+<p></p>
+<pre><code class="language-csharp">List&lt;int&gt; numbers = new List&lt;int&gt;(100); // Pre-allocate capacity for 100 elements
+
+for (int i = 0; i &lt; 100; i++)
+{
+    numbers.Add(i);
+}
+
+Console.WriteLine($"Capacity: {numbers.Capacity}, Count: {numbers.Count}");
+</code></pre>
+<p></p>
+<h2>Conclusion</h2>
+<p></p>
+<p>Lists are an essential and versatile data structure in C#. The <span class="spec">List<T></span> class provides a robust implementation for managing collections of items, with extensive support for adding, removing, accessing, and modifying elements. This chapter has covered the basics and advanced usage of lists, along with interesting examples to demonstrate their capabilities. By leveraging the features of <span class="spec">List<T></span>, you can efficiently manage and manipulate collections in your C# projects.</p>
+</body>
+</html>

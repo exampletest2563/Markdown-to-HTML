@@ -1,0 +1,14 @@
+C:\Users\atlas\Desktop\Do-Not_Delete\MarkdownToHtmlConverter\bin\Debug\net8.0\MarkdownToHtmlConverter.exe
+C:\Users\atlas\Desktop\Do-Not_Delete\MarkdownToHtmlConverter\bin\Debug\net8.0\MarkdownToHtmlConverter.deps.json
+C:\Users\atlas\Desktop\Do-Not_Delete\MarkdownToHtmlConverter\bin\Debug\net8.0\MarkdownToHtmlConverter.runtimeconfig.json
+C:\Users\atlas\Desktop\Do-Not_Delete\MarkdownToHtmlConverter\bin\Debug\net8.0\MarkdownToHtmlConverter.dll
+C:\Users\atlas\Desktop\Do-Not_Delete\MarkdownToHtmlConverter\bin\Debug\net8.0\MarkdownToHtmlConverter.pdb
+C:\Users\atlas\Desktop\Do-Not_Delete\MarkdownToHtmlConverter\obj\Debug\net8.0\MarkdownToHtmlConverter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\atlas\Desktop\Do-Not_Delete\MarkdownToHtmlConverter\obj\Debug\net8.0\MarkdownToHtmlConverter.AssemblyInfoInputs.cache
+C:\Users\atlas\Desktop\Do-Not_Delete\MarkdownToHtmlConverter\obj\Debug\net8.0\MarkdownToHtmlConverter.AssemblyInfo.cs
+C:\Users\atlas\Desktop\Do-Not_Delete\MarkdownToHtmlConverter\obj\Debug\net8.0\MarkdownToHtmlConverter.csproj.CoreCompileInputs.cache
+C:\Users\atlas\Desktop\Do-Not_Delete\MarkdownToHtmlConverter\obj\Debug\net8.0\MarkdownToHtmlConverter.dll
+C:\Users\atlas\Desktop\Do-Not_Delete\MarkdownToHtmlConverter\obj\Debug\net8.0\refint\MarkdownToHtmlConverter.dll
+C:\Users\atlas\Desktop\Do-Not_Delete\MarkdownToHtmlConverter\obj\Debug\net8.0\MarkdownToHtmlConverter.pdb
+C:\Users\atlas\Desktop\Do-Not_Delete\MarkdownToHtmlConverter\obj\Debug\net8.0\MarkdownToHtmlConverter.genruntimeconfig.cache
+C:\Users\atlas\Desktop\Do-Not_Delete\MarkdownToHtmlConverter\obj\Debug\net8.0\ref\MarkdownToHtmlConverter.dll
